@@ -63,8 +63,8 @@ function App() {
 
   return (
     <>
-      <h1>welcome sami</h1>
-      <h4>Your Tasks</h4>
+      <h1 className="text-center text-light">Hey Sami!</h1>
+      <h4 className="text-warning m-4"> @ Your Tasks</h4>
       <div className="todos">
         {todos.map((todo, index) => (
           <div
