@@ -25,6 +25,7 @@ app.get("/todos", async (req, res) => {
 });
 
 app.post("/todo/new", async (req, res) => {
+  console.log("Reqbody", req.body.text);
   const todo = new Todo({
     text: req.body.text,
   });
@@ -37,7 +38,7 @@ app.delete("/todo/delete/:id", async (req, res) => {
   res.json(result);
 });
 
-app.put("/todo/complete/:id", async (req, res) => {
+app.get("/todo/complete/:id", async (req, res) => {
   const todo = await Todo.findById(req.params.id);
   console.log("todo", todo);
   todo.complete = !todo.complete;
